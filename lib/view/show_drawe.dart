@@ -1,12 +1,11 @@
 import 'dart:io';
 import 'package:contracterApp/controller/profile_provider.dart';
-import 'package:contracterApp/model/profile_model/profile_model.dart';
 import 'package:contracterApp/view/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ScreenDrawer extends StatelessWidget {
-  const ScreenDrawer({Key? key}) : super(key: key);
+  const ScreenDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -68,9 +68,9 @@ Future<void>addworkers(Jobworkers value)async{
   getAllStud();
   notifyListeners();
 }
- void checkLogin(BuildContext context,_username,_password)async{
-  final usernames=_username.text;
-  final passwords=_password.text;
+ void checkLogin(BuildContext context,username,password)async{
+  final usernames=username.text;
+  final passwords=password.text;
 
   if(usernames=='mubu'&& passwords=='7736'){
     final sharedprefe=await SharedPreferences.getInstance();
@@ -107,15 +107,7 @@ Future<void>addworkers(Jobworkers value)async{
   
   }
 
-  fromcam() async {
-    
-    File? selectimage;
-    final returnedimage =
-    await ImagePicker().pickImage(source: ImageSource.camera);
   
-    selectimage = File(returnedimage!.path);
-    notifyListeners();
-  }
    Future<void> editTrip(int id, Jobworkers value) async {
     await dbServices.updateTrip(id, value);
     await getAllStud();

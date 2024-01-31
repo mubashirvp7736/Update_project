@@ -144,15 +144,15 @@ class _DetailsState extends State<Details> {
   }
   Future<void> _onAddStudentButtonClicked() async {
     final addProfil=Provider.of<ProfileProvider>(context,listen: false);
-    final _name = _nameController.text.trim();
-    final _age = _numberController.text.trim();
-    final _number = _ageController.text.trim();
+    final name = _nameController.text.trim();
+    final age = _numberController.text.trim();
+    final number = _ageController.text.trim();
 
-    if (_name.isEmpty || _age.isEmpty || _number.isEmpty) {
+    if (name.isEmpty || age.isEmpty || number.isEmpty) {
       return;
     }
-    final _student = ProfileModel(name: _name, number: _number, age: _age, image: _image!.path);
-    addProfil.addProfile(_student);
+    final student = ProfileModel(name: name, number: number, age: age, image: _image!.path);
+    addProfil.addProfile(student);
     Navigator.of(context).pop();
   }
 

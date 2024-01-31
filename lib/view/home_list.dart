@@ -1,6 +1,5 @@
 
 import 'dart:io';
-import 'package:contracterApp/controller/profile_provider.dart';
 import 'package:contracterApp/controller/worker_provider.dart';
 import 'package:contracterApp/controller/home_provider.dart';
 import 'package:contracterApp/model/worker_model/worker_model.dart';
@@ -12,7 +11,7 @@ import 'package:provider/provider.dart';
 
 class ListWorkers extends StatefulWidget {
   final String? selectedJobCategory;
-  const ListWorkers({Key? key, this.selectedJobCategory}) : super(key: key);
+  const ListWorkers({super.key, this.selectedJobCategory});
   @override
   // ignore: library_private_types_in_public_api
   _ListStudentState createState() => _ListStudentState();
