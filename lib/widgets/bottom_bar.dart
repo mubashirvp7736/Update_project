@@ -2,10 +2,10 @@
 import 'package:contracterApp/controller/worker_provider.dart';
 import 'package:contracterApp/view/add_worker.dart';
 import 'package:contracterApp/view/search.dart';
-import 'package:contracterApp/view/show_drawe.dart';
+import 'package:contracterApp/view/show_profile.dart';
 import 'package:contracterApp/view/home_list.dart';
 import 'package:contracterApp/view/settings.dart';
-import 'package:contracterApp/view/tab.dart';
+import 'package:contracterApp/view/categorie_tab.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

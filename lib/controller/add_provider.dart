@@ -38,9 +38,9 @@ Future<void> onAddStudentOnClick(context) async {
      notifyListeners();
      nameController.clear();
     numberController.clear();
-      ageController.clear();
-       _picked=null;
-       _selectedJobCategory=null;
+    ageController.clear();
+   _picked=null;
+    _selectedJobCategory=null;
    
     Navigator.push(
       context,

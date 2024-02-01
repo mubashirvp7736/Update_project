@@ -1,3 +1,4 @@
+
 import 'dart:io';
 import 'package:contracterApp/controller/edit_provider.dart';
 import 'package:contracterApp/model/worker_model/worker_model.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:contracterApp/controller/worker_provider.dart';
 import 'package:contracterApp/view/home_list.dart';
+
 
 class EditScreen extends StatefulWidget {
   final String name;
@@ -33,20 +35,16 @@ class _EditScreenState extends State<EditScreen> {
   final TextEditingController editName = TextEditingController();
   final TextEditingController editNumber = TextEditingController();
   final TextEditingController editAge = TextEditingController();
-  String? selectedJobCategory;
-  //String? age;
-  File? selectedimage;
- String ?image;
+
   @override
   void initState() {
     super.initState();
     editName.text = widget.name;
     editNumber.text = widget.number;
     editAge.text = widget.age;
-    selectedJobCategory = widget.jobCategories;
-    image = widget.image != '' ? widget.image : null;
-  
-   // age = widget.age;
+    widget.jobCategories.toLowerCase();
+    Provider.of<Editprovider>(context, listen: false).selectedImage =
+        widget.image.isNotEmpty ? File(widget.image) : null;
   }
 
   @override
@@ -63,10 +61,20 @@ class _EditScreenState extends State<EditScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                   CircleAvatar( backgroundImage: image != null
-                      ? FileImage(File(image!))
-                  : const AssetImage('assets/user.png',) as ImageProvider,maxRadius: 60,
-                    ),
+                GestureDetector(
+                  onTap: () => Provider.of<Editprovider>(context, listen: false)
+                      .pickImageFromGallery(),
+                  child: Consumer<Editprovider>(
+                    builder: (context, editProvider, child) {
+                      return CircleAvatar(
+                        backgroundImage: editProvider.selectedImage != null
+                            ? FileImage(editProvider.selectedImage!)
+                            : const AssetImage('assets/user.png') as ImageProvider,
+                        maxRadius: 60,
+                      );
+                    },
+                  ),
+                ),
                 const SizedBox(height: 20),
                 TextFormField(
                   keyboardType: TextInputType.name,
@@ -94,49 +102,52 @@ class _EditScreenState extends State<EditScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-              TextFormField(
-                    controller: editAge,
-                    decoration: const InputDecoration(
-                        prefixIcon:
-                            Icon(Icons.calendar_month, color: Colors.blue),
-                        border: OutlineInputBorder(),
-                        hintText: 'AGE'),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "value is empty";
-                      } else {
-                        return null;
-                      }
-                    },
-                    
-                  ),
-                const SizedBox(height: 10),
-                DropdownButtonFormField<String>(
-                  value: selectedJobCategory,
-                  items: ['CementWork', 'BuildingWork', 'SocialWork', 'Painting']
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                   Provider.of<Editprovider>(context).editcontroller();
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    labelText: "Job Categories",
-                    hintText: "Select your job category",
-                    prefixIcon: const Icon(Icons.work),
-                  ),
+                TextFormField(
+                  controller: editAge,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.calendar_month, color: Colors.black),
+                      border: OutlineInputBorder(),
+                      hintText: 'AGE'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please select a job category';
+                      return "value is empty";
                     } else {
                       return null;
                     }
+                  },
+                ),
+                const SizedBox(height: 10),
+                Consumer<Editprovider>(
+                  builder: (context, dropdownProvider, child) {
+                    return DropdownButtonFormField<String>(
+                      value: dropdownProvider.selectedJobCategory,
+                      items: ['CementWork', 'BuildingWork', 'SocialWork', 'Painting']
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (String? newValue) {
+                        dropdownProvider.updateJobCategory(newValue);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        labelText: "Job Categories",
+                        hintText: "Select your job category",
+                        prefixIcon: const Icon(Icons.work),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please select a job category';
+                        } else {
+                          return null;
+                        }
+                      },
+                    );
                   },
                 ),
                 const SizedBox(height: 20),
@@ -158,20 +169,22 @@ class _EditScreenState extends State<EditScreen> {
   }
 
   Future<void> updateStudent(BuildContext context) async {
+    final getprovid = Provider.of<Editprovider>(context, listen: false);
     final editprovider = Provider.of<WorkerProvider>(context, listen: false);
     final name = editName.text;
     final number = editNumber.text;
     final eage = editAge.text;
-    final jobCategoryValue = selectedJobCategory;
-     final images=image;
-     
+    final jobCategoryValue =
+        Provider.of<Editprovider>(context, listen: false).selectedJobCategory;
+    final image = getprovid.selectedImage != null ? getprovid.selectedImage!.path : widget.image;
+
     final updatedStudent = Jobworkers(
       index: widget.index,
       name: name,
       number: number,
-      age: eage, 
-      jobcategories: jobCategoryValue ?? '', 
-      image:images,
+      age: eage,
+      jobcategories: jobCategoryValue ?? '',
+      image: image,
     );
 
     await editprovider.editTrip(widget.index, updatedStudent);

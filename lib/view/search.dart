@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:contracterApp/controller/worker_provider.dart';
 import 'package:contracterApp/controller/search_provider.dart';
 import 'package:contracterApp/model/worker_model/worker_model.dart';
-import 'package:contracterApp/view/details.dart';
+import 'package:contracterApp/view/worker_details.dart';
 import 'package:contracterApp/view/edit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';

@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:contracterApp/view/drawer.dart';
-import 'package:contracterApp/widgets/empty_screeen.dart';
+import 'package:contracterApp/view/profile.dart';
+import 'package:contracterApp/widgets/about_page.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';

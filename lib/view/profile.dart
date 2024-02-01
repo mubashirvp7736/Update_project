@@ -5,7 +5,7 @@ import 'package:contracterApp/model/profile_model/profile_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:contracterApp/view/show_drawe.dart';
+import 'package:contracterApp/view/show_profile.dart';
 import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {

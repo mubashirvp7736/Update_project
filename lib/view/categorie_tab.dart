@@ -1,7 +1,7 @@
 
-import 'package:contracterApp/view/building_work.dart';
+import 'package:contracterApp/view/build_work.dart';
 import 'package:contracterApp/view/cement_work.dart';
-import 'package:contracterApp/view/painting.dart';
+import 'package:contracterApp/view/painting_tab.dart';
 import 'package:contracterApp/view/social_work.dart';
 import 'package:flutter/material.dart';
 // ignore: must_be_immutable

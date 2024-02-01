@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:contracterApp/main.dart';
 import 'package:contracterApp/model/worker_model/worker_model.dart';
 import 'package:contracterApp/services/worker_service.dart';
-import 'package:contracterApp/view/bottom_bar.dart';
+import 'package:contracterApp/widgets/bottom_bar.dart';
 import 'package:contracterApp/view/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -41,7 +41,6 @@ Future<void>addworkers(Jobworkers value)async{
         Offset.zero & MediaQuery.of(context).size
       ),
       items: [
-        
         PopupMenuItem(
           child: ListTile(
             leading: const Icon(Icons.logout),
@@ -96,7 +95,6 @@ Future<void>addworkers(Jobworkers value)async{
 
    }
   }
- 
     File? selectimage;
    fromgallery() async {
     

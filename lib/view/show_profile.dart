@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:contracterApp/controller/profile_provider.dart';
-import 'package:contracterApp/view/drawer.dart';
+import 'package:contracterApp/view/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,4 +1,5 @@
 import 'package:contracterApp/controller/add_provider.dart';
+import 'package:contracterApp/controller/edit_provider.dart';
 import 'package:contracterApp/controller/profile_provider.dart';
 import 'package:contracterApp/controller/worker_provider.dart';
 import 'package:contracterApp/controller/search_provider.dart';
@@ -37,7 +38,8 @@ class Myhome extends StatelessWidget {
         ChangeNotifierProvider<WorkerProvider>(create: (context)=>WorkerProvider()),
         ChangeNotifierProvider<Addworkers>(create: (context) => Addworkers(),),
         ChangeNotifierProvider(create:(context) => SearchProvider(),),
-        ChangeNotifierProvider(create:(context) => ProfileProvider(),)
+        ChangeNotifierProvider(create:(context) => ProfileProvider(),),
+        ChangeNotifierProvider(create: (context) => Editprovider(),)
       ],
       child: const MaterialApp(
         home: Splash(),
