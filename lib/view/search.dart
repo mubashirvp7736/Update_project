@@ -131,7 +131,7 @@ class Searchworker extends StatelessWidget {
                               Navigator.pop(context);
                             }, child:const Text('close')),
                             TextButton(onPressed: (){
-                             Provider.of<WorkerProvider>(context,listen: false).deletestud(index);
+                             Provider.of<WorkerProvider>(context,listen: false).deleteWorker(index);
                               Navigator.pop(context);
                             }, child: const Text('Delete'))
                           ],

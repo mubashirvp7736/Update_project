@@ -1,5 +1,5 @@
 
-import 'package:contracterApp/controller/worker_provider.dart';
+import 'package:contracterApp/controller/login_Page.dart';
 import 'package:contracterApp/view/add_worker.dart';
 import 'package:contracterApp/view/search.dart';
 import 'package:contracterApp/view/show_profile.dart';
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }, icon:const Icon(Icons.search)),
             IconButton(
               onPressed: () {
-             Provider.of<WorkerProvider>(context,listen: false).showPopupMenu(context);
+             Provider.of<LoginPage>(context,listen: false).showPopupMenu(context);
               },
               icon:const Icon(Icons.more_vert_outlined),
             ),

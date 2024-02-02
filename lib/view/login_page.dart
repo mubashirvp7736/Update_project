@@ -1,5 +1,5 @@
 
-import 'package:contracterApp/controller/worker_provider.dart';
+import 'package:contracterApp/controller/login_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 class UserLogin extends StatelessWidget {
@@ -22,7 +22,7 @@ class UserLogin extends StatelessWidget {
         scrollDirection: Axis.vertical,
          child: Column(
            children:[ 
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height*0.4,
             //  color: Color.fromARGB(255, 140, 148, 112),
              child: const Image(image: AssetImage('assets/user-removebg-preview.png')),
@@ -97,9 +97,8 @@ class UserLogin extends StatelessWidget {
                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),
                   onPressed: (){
                     if(_form.currentState!.validate()){
-                    Provider.of<WorkerProvider>(context,listen: false).checkLogin(context,_username,_password);
+                    Provider.of<LoginPage>(context,listen: false).checkLogin(context,_username,_password);
                      }else{
-                     print('data is empty');
                         }
                         null;
                   //  checkLogin(conteyxt,_username,_password);

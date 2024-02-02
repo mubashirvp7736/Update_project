@@ -1,5 +1,5 @@
 
-import 'package:contracterApp/controller/worker_provider.dart';
+import 'package:contracterApp/controller/login_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,10 +14,11 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-  Provider.of<WorkerProvider>(context,listen: false).gotoScreen(context);
-  Provider.of<WorkerProvider>(context,listen: false). checkuserlogin(context);
+  Provider.of<LoginPage>(context,listen: false).gotoScreen(context);
+  Provider.of<LoginPage>(context,listen: false). checkuserlogin(context);
     super.initState();
   }
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0xFF7C8363),

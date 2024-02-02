@@ -42,6 +42,7 @@ class _DetailsState extends State<Details> {
                   children: [
                     GestureDetector(
                       child: CircleAvatar(
+                        // ignore: sort_child_properties_last
                         child: const Icon(Icons.add_a_photo),
                         radius: 50,
                         backgroundImage:_image != null

@@ -34,7 +34,7 @@ Future<void> onAddStudentOnClick(context) async {
       jobcategories: jobCategories,
       image: _picked?.path ?? '',
     );
-     Provider.of<WorkerProvider>(context,listen: false).addworkers(worker);
+     Provider.of<WorkerProvider>(context,listen: false).addWorkers(worker);
      notifyListeners();
      nameController.clear();
     numberController.clear();

@@ -22,7 +22,7 @@ class _ListStudentState extends State<Painting> {
   @override
   void initState() {
     super.initState(); 
-    Provider.of<WorkerProvider>(context,listen: false). getAllStud();
+    Provider.of<WorkerProvider>(context,listen: false). getAllWorker();
   }
   
   @override
@@ -106,7 +106,7 @@ Widget buildStudentCard(Jobworkers data, int index) {
                               Navigator.pop(context);
                             }, child:const Text('close')),
                             TextButton(onPressed: (){
-                              Provider.of<WorkerProvider>(context,listen: false).deletestud(index);
+                              Provider.of<WorkerProvider>(context,listen: false).deleteWorker(index);
                               Navigator.pop(context);
                             }, child: const Text('Delete'))
                           ],

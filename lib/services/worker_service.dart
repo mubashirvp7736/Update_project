@@ -3,18 +3,18 @@ import 'package:contracterApp/model/worker_model/worker_model.dart';
 import 'package:hive/hive.dart';
  class Jobworkservices{
 
-  Future<List<Jobworkers>>getAllStud()async{
-   final studentDb= await Hive.openBox<Jobworkers>("jobworker_db");
+Future<List<Jobworkers>>getAllWorker()async{
+    final studentDb= await Hive.openBox<Jobworkers>("jobworker_db");
    return studentDb.values.toList();
   }
  
-Future <void> addstud(Jobworkers value)async{
+Future <void> addWorker(Jobworkers value)async{
   
   final jobworkerDb = await Hive.openBox<Jobworkers>("jobworker_db");
    await jobworkerDb.add(value);
 }
  
-Future<void> deletestud(int index)async{
+Future<void> deleteWorker(int index)async{
   final jobworkerDb= await Hive.openBox<Jobworkers>("jobworker_db"); 
    jobworkerDb.deleteAt(index);
  }
@@ -24,7 +24,7 @@ Future<void> logout()async{
    await jobworkerDb.clear();
 }
 
-  Future updateTrip(id, Jobworkers value) async {
+  Future updateWorker(id, Jobworkers value) async {
     final jobWorkerDb = await Hive.openBox<Jobworkers>("jobworker_db");
     await jobWorkerDb.putAt(id, value);
    

@@ -17,15 +17,15 @@ class EditScreen extends StatefulWidget {
   final String image;
   final int index;
 
-  EditScreen({
-    Key? key,
+  const EditScreen({
+    super.key,
     required this.name,
     required this.number,
     required this.age,
     required this.jobCategories,
     required this.index,
     required this.image,
-  }) : super(key: key);
+  });
 
   @override
   State<EditScreen> createState() => _EditScreenState();
@@ -37,14 +37,14 @@ class _EditScreenState extends State<EditScreen> {
   final TextEditingController editAge = TextEditingController();
 
   @override
-  void initState() {
+  void initState(){
     super.initState();
     editName.text = widget.name;
     editNumber.text = widget.number;
     editAge.text = widget.age;
     widget.jobCategories.toLowerCase();
     Provider.of<Editprovider>(context, listen: false).selectedImage =
-        widget.image.isNotEmpty ? File(widget.image) : null;
+    widget.image.isNotEmpty ? File(widget.image) : null;
   }
 
   @override
@@ -174,9 +174,8 @@ class _EditScreenState extends State<EditScreen> {
     final name = editName.text;
     final number = editNumber.text;
     final eage = editAge.text;
-    final jobCategoryValue =
-        Provider.of<Editprovider>(context, listen: false).selectedJobCategory;
-    final image = getprovid.selectedImage != null ? getprovid.selectedImage!.path : widget.image;
+    final jobCategoryValue = getprovid.selectedJobCategory;
+   final image = getprovid.selectedImage != null ? getprovid.selectedImage!.path : widget.image;
 
     final updatedStudent = Jobworkers(
       index: widget.index,
@@ -187,6 +186,6 @@ class _EditScreenState extends State<EditScreen> {
       image: image,
     );
 
-    await editprovider.editTrip(widget.index, updatedStudent);
+    await editprovider.editWorker(widget.index, updatedStudent);
   }
 }

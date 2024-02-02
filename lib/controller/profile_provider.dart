@@ -8,7 +8,6 @@ class ProfileProvider extends ChangeNotifier{
   List<ProfileModel>userId=[];
   Profileservices userProfile =Profileservices();
 
- // get ismpty => false;
    
 Future getAllProfile()async{
   userId=await userProfile.getAllProfile();
