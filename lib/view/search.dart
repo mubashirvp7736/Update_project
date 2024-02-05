@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class Searchworker extends StatelessWidget {
-  const Searchworker({super.key});
+class SearchWorker extends StatelessWidget {
+  const SearchWorker({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class Searchworker extends StatelessWidget {
   return GestureDetector(
     onTap: () {
        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return Details(name: data.name, number: data.number, age:data. age, jobcategories:data. jobcategories,image: data.image!,);
+        return WorkerDetails(name: data.name, number: data.number, age:data. age, jobcategories:data. jobcategories,image: data.image!,);
       },));
     },
     child: Padding(

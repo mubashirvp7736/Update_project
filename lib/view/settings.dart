@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
 // ignore: must_be_immutable
-class Account extends StatelessWidget {
-   Account({super.key});
+class Settings extends StatelessWidget {
+   Settings({super.key});
 
   List<String> listText = [ 'Account','about'];
 
   final screens = [
-   const Details(),
+   const ProfileAccount(),
    aboute(),
    
     ];

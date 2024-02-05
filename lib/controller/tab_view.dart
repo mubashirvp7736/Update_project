@@ -1,18 +1,18 @@
 import 'package:contracterApp/model/worker_model/worker_model.dart';
 import 'package:flutter/material.dart';
 
-class Tabviewdetail with ChangeNotifier{
+class TabviewDetail with ChangeNotifier{
 
-  List<Jobworkers> filteredworkerList = [];
+  List<Jobworkers> filteredWorkerList = [];
   List<Jobworkers> workersl = [];
-  void filterworkers(String search) {
+  void filterWorkers(String search) {
 
     if (search.isEmpty) { 
-        filteredworkerList = List.from(workersl);
+        filteredWorkerList = List.from(workersl);
         notifyListeners();
     
     }else{
-        filteredworkerList = workersl
+        filteredWorkerList = workersl
             .where((student) =>
                 student.name.toLowerCase().contains(search.toLowerCase()))
             .toList();
@@ -23,11 +23,11 @@ class Tabviewdetail with ChangeNotifier{
   bool  isSearching = false;
   
    TextEditingController searchController = TextEditingController();
-   void serachh(){
+   void search(){
     isSearching = !isSearching;
         if (!isSearching) {
           searchController.clear();
-         filteredworkerList = List.from(workersl);
+         filteredWorkerList = List.from(workersl);
          notifyListeners();
         }
         notifyListeners();

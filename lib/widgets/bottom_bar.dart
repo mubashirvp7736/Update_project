@@ -24,20 +24,20 @@ class _HomeScreenState extends State<HomeScreen> {
   const   ListWorkers(),
       const AddWorker(),
        TabPage(),
-       Account(),
+       Settings(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer:const ScreenDrawer(),
+        drawer:const ProfileDetail(),
         appBar: AppBar(
           centerTitle: true,
           title:const Text('HomePage',style: TextStyle(color:Color(0xFFF6EDE3) ),),
           actions: [
             IconButton(onPressed: (){
-           Navigator.push(context,MaterialPageRoute(builder:(context) =>const  Searchworker()));  
+           Navigator.push(context,MaterialPageRoute(builder:(context) =>const  SearchWorker()));  
             }, icon:const Icon(Icons.search)),
             IconButton(
               onPressed: () {

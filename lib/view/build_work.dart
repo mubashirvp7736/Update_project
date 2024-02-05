@@ -9,15 +9,15 @@ import 'package:contracterApp/view/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Building extends StatefulWidget {
+class BuildingCategorie extends StatefulWidget {
   final String? selectedJobCategory;
-  const Building({super.key, this.selectedJobCategory});
+  const BuildingCategorie({super.key, this.selectedJobCategory});
   @override
   // ignore: library_private_types_in_public_api
   _ListStudentState createState() => _ListStudentState();
 }
 
-class _ListStudentState extends State<Building> {
+class _ListStudentState extends State<BuildingCategorie> {
   String ? image;
   @override
   void initState() {
@@ -36,7 +36,7 @@ class _ListStudentState extends State<Building> {
           actions: [
             IconButton(onPressed: (){
               
-         Navigator.push(context,MaterialPageRoute(builder:(context) =>  const Searchworker()));  
+         Navigator.push(context,MaterialPageRoute(builder:(context) =>  const SearchWorker()));  
             }, icon: const Icon(Icons.search,color: Colors.white,))
           ],
   ),
@@ -48,7 +48,7 @@ Widget buildStudentCard(Jobworkers data, int index) {
   return GestureDetector(
     onTap: () {
        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return Details(name: data.name, number: data.number, age:data. age, jobcategories:data. jobcategories,image: data.image!,);
+        return WorkerDetails(name: data.name, number: data.number, age:data. age, jobcategories:data. jobcategories,image: data.image!,);
       },));
     },
     child: Padding(

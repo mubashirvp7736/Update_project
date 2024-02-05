@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-class Details extends StatelessWidget {
+class WorkerDetails extends StatelessWidget {
  final String name;
  final String number;
  final String age;
  final String jobcategories;
  final String image;
  
-  const Details({super.key, required this.name, required this.number, required this.age, required this.jobcategories,required this.image});
+  const WorkerDetails({super.key, required this.name, required this.number, required this.age, required this.jobcategories,required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +35,7 @@ class Details extends StatelessWidget {
                 CircleAvatar(
                    maxRadius: 40,
                    backgroundImage: FileImage(File(image)),
-                  //  child: Icon(
-                  //     Icons.person_outline_rounded,
-                  //     color: Colors.red,
-                  //     size: 30,)
+                
                 ),
                 SingleChildScrollView(
                   child: Column(

@@ -9,7 +9,7 @@ class Workerdetail with ChangeNotifier {
    TextEditingController searchController = TextEditingController();
   bool isSearching = false;
 
-  void filterworkers(String search) {
+  void filterWorkers(String search) {
     if (search.isEmpty) {
       filteredworkerList = List.from(workersList);
       notifyListeners();
@@ -22,7 +22,7 @@ class Workerdetail with ChangeNotifier {
     notifyListeners();
   }
 
-  void serachh() {
+  void searCh() {
     isSearching = !isSearching;
     if (!isSearching) {
       searchController.clear();

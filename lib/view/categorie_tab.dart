@@ -9,10 +9,10 @@ class TabPage extends StatelessWidget {
   List<String> jobCategories = ['CementWork', 'BuildingWork', 'SocialWork', 'Painting'];
 
   List categor = [
-    const Cement(),
-    const Building(),
-    const Social(),
-    const Painting(),
+    const CementCategorie(),
+    const BuildingCategorie(),
+    const SocialCategorie(),
+    const PaintingCategorie(),
   ];
 
   TabPage({super.key});

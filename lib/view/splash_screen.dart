@@ -3,15 +3,15 @@ import 'package:contracterApp/controller/login_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Splash extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   
-  const Splash({super.key});
+  const SplashScreen({super.key});
 
   @override
-  State<Splash> createState() => _SplashState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashState extends State<Splash> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
   Provider.of<LoginPage>(context,listen: false).gotoScreen(context);

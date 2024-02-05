@@ -8,14 +8,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:contracterApp/view/show_profile.dart';
 import 'package:provider/provider.dart';
 
-class Details extends StatefulWidget {
-  const Details({super.key});
+class ProfileAccount extends StatefulWidget {
+  const ProfileAccount({super.key});
 
   @override
-  State<Details> createState() => _DetailsState();
+  State<ProfileAccount> createState() => _ProfileAccountState();
 }
 
-class _DetailsState extends State<Details> {
+class _ProfileAccountState extends State<ProfileAccount> {
   final ImagePicker _imagePicker = ImagePicker();
   final _nameController = TextEditingController();
   final _numberController = TextEditingController();
@@ -123,11 +123,11 @@ class _DetailsState extends State<Details> {
                     ),
                     ElevatedButton.icon(
                       onPressed: () {
-                        _onAddStudentButtonClicked();
+                        _onAddUserButtonClicked();
                         if (_formKey.currentState!.validate()) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const ScreenDrawer()),
+                            MaterialPageRoute(builder: (context) => const ProfileDetail()),
                           );
                         }
                       },
@@ -143,7 +143,7 @@ class _DetailsState extends State<Details> {
       ),
     );
   }
-  Future<void> _onAddStudentButtonClicked() async {
+  Future<void> _onAddUserButtonClicked() async {
     final addProfil=Provider.of<ProfileProvider>(context,listen: false);
     final name = _nameController.text.trim();
     final age = _numberController.text.trim();
@@ -185,6 +185,7 @@ class _DetailsState extends State<Details> {
          _image = File(image.path);
        });
      }
+     // ignore: use_build_context_synchronously
      Navigator.pop(context);
   }
   }

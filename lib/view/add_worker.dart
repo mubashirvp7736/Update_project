@@ -143,7 +143,7 @@ class AddWorker extends StatelessWidget {
                   ElevatedButton(
                     onPressed: (){
                       if ( value. formKey.currentState!.validate()) {
-                    Provider.of<Addworkers>(context,listen: false).onAddStudentOnClick(context);
+                    Provider.of<Addworkers>(context,listen: false).onAddWorkertOnClick(context);
                       }
                     },
                     child: const Text("Add"),

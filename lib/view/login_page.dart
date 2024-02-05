@@ -2,13 +2,11 @@
 import 'package:contracterApp/controller/login_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 class UserLogin extends StatelessWidget {
    UserLogin({super.key});
-
    final _username=TextEditingController();
-
    final _password=TextEditingController();
-
  final _form=GlobalKey<FormState>();
 
   @override

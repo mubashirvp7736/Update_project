@@ -35,7 +35,7 @@ class Myhome extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<Workerdetail>(create: (context) => Workerdetail()),
-        ChangeNotifierProvider<Tabviewdetail>(create: (context) => Tabviewdetail()),
+        ChangeNotifierProvider<TabviewDetail>(create: (context) => TabviewDetail()),
         ChangeNotifierProvider<WorkerProvider>(create: (context)=>WorkerProvider()),
         ChangeNotifierProvider<Addworkers>(create: (context) => Addworkers(),),
         ChangeNotifierProvider(create:(context) => SearchProvider(),),
@@ -44,7 +44,7 @@ class Myhome extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => LoginPage(),)
       ],
       child: const MaterialApp(
-        home: Splash(),
+        home: SplashScreen(),
         debugShowCheckedModeBanner:false,
       ),
     );

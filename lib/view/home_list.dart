@@ -41,7 +41,7 @@ Widget buildStudentCard(Jobworkers data, int index) {
   return GestureDetector(
     onTap: () {
        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return Details(name: data.name, number: data.number, age:data. age, jobcategories:data. jobcategories,image: data.image!,);
+        return WorkerDetails(name: data.name, number: data.number, age:data. age, jobcategories:data. jobcategories,image: data.image!,);
       },));
     },
     child: Padding(

@@ -18,7 +18,7 @@ String?  _selectedJobCategory;
    final TextEditingController numberController = TextEditingController();
    final TextEditingController ageController = TextEditingController();
    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-Future<void> onAddStudentOnClick(context) async {
+Future<void> onAddWorkertOnClick(context) async {
     final name = nameController.text.trim();
     final numb = numberController.text.trim();
     final age =  ageController.text.trim();
